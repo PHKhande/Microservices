@@ -1,9 +1,14 @@
 import PostCreate from "./PostCreate";
+import PostList from "./PostList";
 
 const App = () => {
   return (
     <>
-      <PostCreate/>
+      <PostCreate />
+      <hr />
+
+      <h1>Posts</h1>
+      <PostList />
     </>
   );
 };
