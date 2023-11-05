@@ -22,13 +22,17 @@ const PostList = () => {
       >
         <div className="card-body">
           <h3>{post.title}</h3>
-          <CommentsLists postId={post.id}/>
-          <CommentCreate postId={post.id}/>
+          <CommentsLists postId={post.id} />
+          <CommentCreate postId={post.id} />
         </div>
       </div>
     );
   });
-  return <div className="d-flex flex-row flex-wrap justify-content-center">{renderedPosts}</div>;
+  return (
+    <div className="d-flex flex-row flex-wrap justify-content-center">
+      {renderedPosts}
+    </div>
+  );
 };
 
 export default PostList;

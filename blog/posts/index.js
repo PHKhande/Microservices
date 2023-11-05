@@ -1,22 +1,24 @@
-const app = require('express')();
-const bodyParser = require('body-parser');
-const { randomBytes } = require('crypto');
-const cors = require('cors');
+const app = require("express")();
+const bodyParser = require("body-parser");
+const { randomBytes } = require("crypto");
+const cors = require("cors");
 
-app.use(cors()); 
+app.use(cors());
 app.use(bodyParser.json());
 const posts = {};
 
-app.get('/posts', (req, res, next) => {
-    res.send(posts);
+app.get("/posts", (req, res, next) => {
+  res.send(posts);
 });
 
-app.post('/posts', (req, res, next) => {
-    const id = randomBytes(4).toString('hex');
-    const {title} = req.body;
-    posts[id] = {id, title};
-    console.log(posts);
-    res.status(201).send(posts[id]);
+app.post("/posts", (req, res, next) => {
+  const id = randomBytes(4).toString("hex");
+  const { title } = req.body;
+  posts[id] = { id, title };
+  console.log(posts);
+  res.status(201).send(posts[id]);
 });
 
-app.listen(4000, ()=>{console.log('Listening on 4000')});
+app.listen(4000, () => {
+  console.log("Listening on 4000");
+});
