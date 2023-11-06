@@ -15,7 +15,6 @@ app.post("/posts", (req, res, next) => {
   const id = randomBytes(4).toString("hex");
   const { title } = req.body;
   posts[id] = { id, title };
-  console.log(posts);
   res.status(201).send(posts[id]);
 });
 
